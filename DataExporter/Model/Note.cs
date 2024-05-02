@@ -1,0 +1,14 @@
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace DataExporter.Model
+{
+    public class Note
+    {
+        public int Id { get; set; }
+        public string Text { get; set; }
+        public int PolicyId { get; set; }
+
+        [ForeignKey("PolicyId")]
+        public Policy Policy { get; set; }
+    }
+}
